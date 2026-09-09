@@ -1,0 +1,244 @@
+/* Responsive corrections for the published workshop page. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.hero-copy,
+.story-layout > div,
+.practice-heading > *,
+.portfolio-heading > *,
+.about-top > *,
+.events-heading > *,
+.consultation-path > *,
+.contact > *,
+.about-copy > *,
+.journey-title > *,
+.journey ol,
+.journey li,
+.journey li > *,
+.section-label > *,
+.colleagues > *,
+.competency-list article > *,
+.boutique-grid article,
+.labyrinth-method li,
+.labyrinth-places article {
+  min-width: 0;
+}
+
+.colleagues > div {
+  max-width: 100%;
+}
+
+.labyrinth-method li {
+  overflow-wrap: anywhere;
+}
+
+.consultation-path li,
+.credential-details {
+  overflow-wrap: anywhere;
+}
+
+.film-library-heading > *,
+.film-player-heading > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.story-layout > div > p + p,
+.story-layout > div > .source-link + p {
+  margin-top: 1rem;
+}
+
+.story-layout .story-note {
+  margin-block: 1.25rem;
+}
+
+.source-link,
+.contact-links a,
+.contact-links > span,
+.inline-link-light,
+.button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.contact-phone {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 3vw, 2.5rem);
+}
+
+.film-still .work-image {
+  aspect-ratio: 16 / 9;
+}
+
+.film-still .work-image img {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+@media (max-width: 68rem) {
+  html {
+    scroll-padding-top: 1rem;
+  }
+
+  /* Stay in the document flow so the header never covers a photograph. */
+  .site-header {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    min-height: 4rem;
+    gap: .5rem;
+    padding-block: .5rem;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand img {
+    width: min(100%, 12.5rem);
+  }
+
+  .compact-menu {
+    position: static;
+  }
+
+  .compact-menu summary,
+  .header-call {
+    min-height: 44px;
+  }
+
+  .header-call {
+    width: 44px;
+    min-width: 44px;
+    padding: 8px;
+  }
+
+  .compact-menu nav {
+    top: calc(100% + .5rem);
+    right: 0;
+    left: 0;
+    width: auto;
+    max-height: min(70svh, 32rem);
+    overscroll-behavior: contain;
+  }
+}
+
+@media (max-width: 58rem) {
+  .hero,
+  .qualification,
+  .consultation-path,
+  .story-layout,
+  .contact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-visual {
+    justify-self: center;
+  }
+
+  .story-layout {
+    align-items: start;
+    gap: 2rem;
+  }
+
+  /* Both children used to occupy row 1, creating an implicit narrow column. */
+  .story-layout > div {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .labyrinth-film-intro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .labyrinth-method ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .hero {
+    padding-block: 2rem 2.5rem;
+  }
+
+  .hero-facts,
+  .labyrinth-film-intro,
+  .journey-title,
+  .journey ol,
+  .journey li,
+  .journey li:last-child {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section-label {
+    align-items: baseline;
+  }
+
+  .section-label p {
+    overflow-wrap: anywhere;
+  }
+
+  .hero-art.hero-author img {
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .section {
+    padding-block: 2.75rem;
+  }
+
+  .qualification-compact {
+    margin-bottom: 0;
+  }
+
+  .story-layout h2 {
+    font-size: clamp(1.8rem, 7.5vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .story-layout > div > p {
+    line-height: 1.65;
+  }
+
+  .story-layout > div > .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .contact-phone {
+    gap: .4rem;
+    font-size: clamp(1rem, 4.8vw, 1.5rem);
+  }
+
+  .collection summary {
+    flex-wrap: wrap;
+  }
+
+  .collection summary > span {
+    flex: 1 1 10rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .photo-controls {
+    gap: .5rem;
+  }
+
+  .photo-controls button {
+    flex: 1 1 8rem;
+  }
+}
+
+@media (max-width: 24rem) {
+  .labyrinth-method ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
