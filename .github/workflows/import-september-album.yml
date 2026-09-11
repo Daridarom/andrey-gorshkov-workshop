@@ -10,16 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download 19 HQ WebP photos
+      - name: Download September album archive
         shell: bash
         run: |
           set -euo pipefail
-          base='https://096d14063e62d7.lhr.life'
-          mkdir -p assets/new-2026-09
-          for id in $(seq 6182 6200); do
-            echo "Downloading IMG_${id}"
-            curl -fL --retry 5 --retry-delay 2 "$base/img_${id}.webp" -o "assets/new-2026-09/img_${id}.webp"
-          done
+          mkdir -p assets/new-2026-09 /tmp/september-album
+          curl -fL --retry 5 --retry-delay 2 'https://599b8a4e6f07f4.lhr.life/september-album.zip' -o /tmp/september-album.zip
+          unzip -q -o /tmp/september-album.zip -d /tmp/september-album
+          cp /tmp/september-album/img_*.webp assets/new-2026-09/
       - name: Validate all images
         shell: bash
         run: |
