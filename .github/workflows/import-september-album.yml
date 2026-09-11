@@ -14,7 +14,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base='https://church-politics-cuts-expertise.trycloudflare.com'
+          base='https://096d14063e62d7.lhr.life'
           mkdir -p assets/new-2026-09
           for id in $(seq 6182 6200); do
             echo "Downloading IMG_${id}"
